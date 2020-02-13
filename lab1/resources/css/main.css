@@ -54,6 +54,11 @@ header .logo * {
   height: inherit;
 }
 
+header h1 {
+  text-align: left;
+  margin-left: 25px;
+}
+
 header hr {
   border: none;
   background: whitesmoke;
@@ -312,6 +317,7 @@ input[type = "text"]:focus, input[type = "password"]:focus {
   font-size: 32pt;
   text-align: center;
   margin-bottom: 25px;
+  margin-top: 10px;
 }
 
 .main-content .description {
