@@ -1,0 +1,32 @@
+<section class="main-content" style="margin-bottom: 40px;">
+    <h1 id="title">Лабораторная работа №3</h1>
+    <div class="description">
+        <div class="main-desc">
+            <b>Цель работы: </b> изучить Функциональное программирование в языке JavaScript.<br>
+        </div>
+        <b style="font-size: 20pt; text-align: center; display: block">Задание</b><br>
+        <br>
+        <div class="quest">
+            <b>Задание 1.</b> Сгенерировать массив из 1000 случайных чисел в диапазоне s ± p%, отсортировать его
+            по убыванию остатков от деления на 10.<br><br>
+            <b>Задание 2.</b>  Создать массив из списка имен. Сгенерировать массив из 20 объектов типа «Человек». У каждого объекта должно быть случайным образом выбрано имя, возраст, а также метод, который выводит имя и возраст данного человека. Прогнать методом обхода по этому массиву и заставить каждого человека представиться.<br>
+        </div>
+        <div class="result">
+            <hr>
+            <div class="exe" id="exe1">
+                <div class="title">Задание 1</div>
+                <input type="number" placeholder="Введите S" name="s" style="width: auto">
+                <input type="number" placeholder="Введите P%" name="p" style="width: auto">
+                <button onclick="arrayGenerator()">Сгенерировать массив</button>
+                <div class="out"></div>
+            </div>
+            <hr>
+            <div class="exe" id="exe2">
+                <div class="title">Задание 2</div>
+                <input type="text" name="names" placeholder="Введите элементы массива через запятую">
+                <button onclick="namesCreate()">Вычислить</button><br>
+                <div class="out"></div>
+            </div>
+        </div>
+    </div>
+</section>

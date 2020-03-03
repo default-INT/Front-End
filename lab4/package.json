@@ -1,0 +1,24 @@
+{
+  "name": "front-end-lab3",
+  "version": "1.0.2",
+  "description": "",
+  "repository": "github:default-INT/Front-End",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Evgeniy Trofimov <int.tv.gs@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "entities": "^2.0.0",
+    "express-handlebars": "^3.1.0",
+    "hbs": "^4.1.0"
+  }
+}
