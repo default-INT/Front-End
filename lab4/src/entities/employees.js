@@ -4,8 +4,9 @@ class Employee {
     constructor(name, lastName, dailyWorkRate, numberOfDaysWorked) {
         this._name = name;
         this._lastName = lastName;
-        this._dailyWorkRate = dailyWorkRate
+        this._dailyWorkRate = dailyWorkRate;
         this._numberOfDaysWorked = numberOfDaysWorked;
+        this._typeOfWork = undefined;
     }
 
     get name() {
@@ -39,6 +40,19 @@ class Employee {
      */
     getSalary() {
         return this._numberOfDaysWorked * this._dailyWorkRate;
+    }
+
+    /**
+     *
+     * @return {string}
+     */
+    toJSON() {
+        return JSON.stringify({
+            name: this._name,
+            lastName: this._lastName,
+            salary: this.getSalary(),
+            typeOfWork: this._typeOfWork
+        });
     }
 }
 

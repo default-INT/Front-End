@@ -1,6 +1,6 @@
 "use strict";
 
-const employees = require('/src/entities/employees');
+const employees = require('../entities/employees');
 
 class EmployeesService {
     static _instance;
@@ -8,14 +8,14 @@ class EmployeesService {
 
     constructor() {
         this._team = [];
-        EmployeesService.#setTemplate(this._team);
+        EmployeesService._setTemplate(this._team);
     }
 
     /**
      *
      * @param team {[]}
      */
-    static #setTemplate(team) {
+    static _setTemplate(team) {
         team.push(new employees.Plasterer('Евгений', 'Трофимов', 12, 30));
         team.push(new employees.Painter('Игорь', 'Ропот', 15, 15));
     }
@@ -33,6 +33,14 @@ class EmployeesService {
      */
     addEmployee(employee) {
         this._team.push(employee);
+    }
+
+    /**
+     *
+     * @param id {number}
+     */
+    getEmployee(id) {
+        this._team[id];
     }
 
     getEmployees() {

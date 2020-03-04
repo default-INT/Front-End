@@ -1,11 +1,11 @@
 "use strict";
 
-//import * as employeeService from './src/services/employees-service';
+//import * as employeeService from './src/logics/employees-service';
 
 const express = require("express");
 const lab2 = require("./src/lab2");
 const lab3 = require("./src/lab3");
-const lab4 = require("./src/services/employees-service");
+const employeeService = require("./src/logics/employees-service");
 
 const app = express();
 const labsRouter = express.Router();
@@ -51,9 +51,19 @@ apiRouter.put("/lab3/exe2", jsonParser, (req, res) => {
     res.json(lab3.getHuman(array));
 });
 
-apiRouter.get("/lab4/employees", (req, res) => {
+apiRouter.get("/lab4/employees/:id", (req, res) => {
     let service = employeeService.EmployeesService.instance;
-    res.json(service.getEmployees());
+    res.json(service.getEmployee(parseInt(req.params.id)));
+});
+
+apiRouter.post("/lab4/employees/:id", (req, res) => {
+    let service = employeeService.EmployeesService.instance;
+    res.json(service.getEmployee(parseInt(req.params.id)));
+});
+
+apiRouter.get("/lab4/employees/:id", (req, res) => {
+    let service = employeeService.EmployeesService.instance;
+    res.json(service.getEmployee(parseInt(req.params.id)));
 });
 
 labsRouter.use("/:id", (req, res) => {
