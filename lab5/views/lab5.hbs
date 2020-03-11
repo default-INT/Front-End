@@ -1,0 +1,68 @@
+<section class="main-content">
+    <h1 id="title">Лабораторная работа №5</h1>
+    <div class="description">
+        <b style="font-size: 20pt; text-align: center; display: block">Задание</b><br>
+        <br>
+        <div class="quest">
+            Подготовить json-файл, содержащий следующую информацию:<br>
+            <ul>
+                <li>ФИО студента</li>
+                <li>Факультет</li>
+                <li>Специальность</li>
+                <li>Список дисциплин, по которым есть лабораторные работы (каждая дисциплина –
+                    это объект, содержащий список лабораторных работ</li>
+            </ul>
+            <br>
+            Выстроить цепь обработки подготовленного файла, включающую следующие шаги:
+            <ul>
+                <li>Чтение данных</li>
+                <li>Преобразование содержимого файла в объек</li>
+                <li>Формирование списка оставшихся лабораторных работ на текущую дату</li>
+                <li>Вывод полученного списка</li>
+            </ul>
+        </div>
+        <div class="result">
+            <hr>
+            <div class="exe" id="exe1">
+                <div class="title">Задание 1</div>
+                <br>
+                <label><b>Добавление сотрудника</b></label><br>
+                <input type="text" placeholder="Введите имя" name="name" style="width: auto">
+                <input type="text" placeholder="Введите фамилию" name="fullName" style="width: auto"><br>
+                <input type="number" placeholder="Введите ставку за день работы" name="dailyWorkRate"
+                       style="width: 520px"><br>
+                <input type="number" placeholder="Введите количество отработанных дней" name="numberOfDaysWorked"
+                       style="width: 520px"><br>
+                <select style="width: auto">
+                    <option value="painter">Маляр</option>
+                    <option value="plasterer">Штукатур</option>
+                </select><br>
+                <br>
+                <button onclick="addEmployee()">Добавить сотрудника</button>
+                <button onclick="setEmployees()">Загрузить сотрудников</button>
+                <table class="employees-table">
+                    <thead>
+                    <tr>
+                        <td>Имя</td>
+                        <td>Фамилия</td>
+                        <td>Ставка за день</td>
+                        <td>Количество отработанных дней</td>
+                        <td>Должность</td>
+                        <td>Зарплата</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="out"></div>
+            </div>
+            <hr>
+            <div class="exe" id="exe2" style="margin-bottom: 20px">
+                <div class="title">Задание 2</div>
+                <input type="text" name="phoneNumber" placeholder="Номер телефона" onchange="checkPhoneNumber()">
+                <input type="text" name="email" placeholder="email" onchange="checkEmail()">
+                <input type="text" name="url" placeholder="url адрес" onchange="checkUrl()">
+            </div>
+        </div>
+    </div>
+</section>
