@@ -33,3 +33,30 @@ class UrlValidator extends Validator {
         return urlRegEx.test(this._str);
     }
 }
+
+function checkPhoneNumber() {
+    let phoneNumber = document.querySelector('#exe2 input[name="phoneNumber"]');
+    if (new PhoneValidator(phoneNumber.value).checkPattern()) {
+        phoneNumber.style.color = 'black';
+    } else {
+        phoneNumber.style.color = 'red';
+    }
+}
+
+function checkEmail() {
+    let email = document.querySelector('#exe2 input[name="email"]');
+    if (new EmailValidator(email.value).checkPattern()) {
+        email.style.color = 'black';
+    } else {
+        email.style.color = 'red';
+    }
+}
+
+function checkUrl() {
+    let url = document.querySelector('#exe2 input[name="url"]');
+    if (new UrlValidator(url.value).checkPattern()) {
+        url.style.color = 'black';
+    } else {
+        url.style.color = 'red';
+    }
+}

@@ -33,6 +33,10 @@ class EmployeesService {
      */
     addEmployee(employee) {
         this._team.push(employee);
+        return {
+            employee: employee,
+            result: true
+        };
     }
 
     /**

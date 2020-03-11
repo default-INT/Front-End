@@ -67,7 +67,7 @@ button:hover {
     padding-top: 30px;
 }
 
-input {
+input, select {
     width: 90%;
     margin-top: 15px;
     height: 60px;

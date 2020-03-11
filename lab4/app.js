@@ -13,6 +13,8 @@ const apiRouter = express.Router();
 const expressHbs = require("express-handlebars");
 
 const hbs = require("hbs");
+const {Plasterer} = require("./src/entities/employees");
+const {Painter} = require("./src/entities/employees");
 const jsonParser = express.json();
 
 app.engine("hbs", expressHbs(
@@ -56,14 +58,28 @@ apiRouter.get("/lab4/employees/:id", (req, res) => {
     res.json(service.getEmployee(parseInt(req.params.id)));
 });
 
-apiRouter.post("/lab4/employees/:id", (req, res) => {
+apiRouter.post("/lab4/employees", jsonParser, (req, res) => {
     let service = employeeService.EmployeesService.instance;
-    res.json(service.getEmployee(parseInt(req.params.id)));
+    if (req.body.position === 'painter') {
+        res.json(service.addEmployee(new Painter(
+            req.body.name,
+            req.body.fullName,
+            req.body.dailyWorkRate,
+            req.body.numberOfDaysWorked
+        )));
+    } else if (req.body.position === 'plasterer') {
+        res.json(service.addEmployee(new Plasterer(
+            req.body.name,
+            req.body.fullName,
+            req.body.dailyWorkRate,
+            req.body.numberOfDaysWorked
+        )));
+    }
 });
 
-apiRouter.get("/lab4/employees/:id", (req, res) => {
+apiRouter.get("/lab4/employees", (req, res) => {
     let service = employeeService.EmployeesService.instance;
-    res.json(service.getEmployee(parseInt(req.params.id)));
+    res.json(service.getEmployees());
 });
 
 labsRouter.use("/:id", (req, res) => {

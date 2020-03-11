@@ -1,6 +1,13 @@
 "use strict";
 
 class Employee {
+    /**
+     *
+     * @param name {string} имя сотрудника
+     * @param lastName {string} фамилия сотрудника
+     * @param dailyWorkRate {number} ставка за день работы
+     * @param numberOfDaysWorked {number} количество отработанных дней
+     */
     constructor(name, lastName, dailyWorkRate, numberOfDaysWorked) {
         this._name = name;
         this._lastName = lastName;
@@ -44,32 +51,39 @@ class Employee {
 
     /**
      *
-     * @return {string}
      */
     toJSON() {
-        return JSON.stringify({
+        return {
             name: this._name,
             lastName: this._lastName,
+            dailyWorkRate: this._dailyWorkRate,
+            numberOfDaysWorked: this._numberOfDaysWorked,
             salary: this.getSalary(),
-            typeOfWork: this._typeOfWork
-        });
+            position: this._typeOfWork
+        };
     }
 }
 
+/**
+ * Маляр
+ */
 class Painter extends Employee {
     constructor(name, lastName, dailyWorkRate, numberOfDaysWorked) {
         super(name, lastName, dailyWorkRate, numberOfDaysWorked);
-        this._typeOfWork = "Красит стены";
+        this._typeOfWork = "Маляр";
     }
     get typeOfWork() {
         return this._typeOfWork;
     }
 }
 
+/**
+ * Штукатур
+ */
 class Plasterer extends Employee {
     constructor(name, lastName, dailyWorkRate, numberOfDaysWorked) {
         super(name, lastName, dailyWorkRate, numberOfDaysWorked);
-        this._typeOfWork = "Штукатурит стены";
+        this._typeOfWork = "Штукатур";
     }
     get typeOfWork() {
         return this._typeOfWork;
