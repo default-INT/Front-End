@@ -364,7 +364,7 @@ input[type = "text"]:focus, input[type = "password"]:focus {
   margin-top: 20px;
 }
 
-.employees-table {
+.employees-table, .student-table {
   width: 100%;
   margin-bottom: 50px;
   text-align: center;
@@ -372,7 +372,7 @@ input[type = "text"]:focus, input[type = "password"]:focus {
   
 }
 
-.employees-table td {
+.employees-table td, .student-table td {
   border: 2px solid black;
   padding: 5px;
   padding-bottom: 10px;
@@ -381,4 +381,14 @@ input[type = "text"]:focus, input[type = "password"]:focus {
 .employees-table thead td {
   font-weight: bold;
   background: yellow;
+}
+
+.student-table thead td {
+  font-weight: bold;
+  background: #31c5ff;
+}
+
+.quest ul {
+  padding-left: 60px;
+  padding-top: 10px;
 }

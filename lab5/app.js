@@ -83,7 +83,7 @@ apiRouter.get("/lab4/employees", (req, res) => {
     res.json(service.getEmployees());
 });
 
-apiRouter.get("/lab5/studentInfo", (req, res) => {
+apiRouter.get("/lab5/student-info", (req, res) => {
     StudentService.getStudentData()
         .then(student => res.json(student))
         .catch(reject => console.log(reject));

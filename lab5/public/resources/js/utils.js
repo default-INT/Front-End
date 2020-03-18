@@ -216,7 +216,7 @@ function node(params) {
         else element.appendChild(params.childNodes);
     }
     if (!!params.src) element.src = params.src;
-    if (!!params.src) element.src = params.src;
+    if (!!params.value) element.value = params.value;
     if (!!params.name) element.name = params.name;
     if (!!params.cols) element.cols = params.cols;
     if (!!params.rows) element.rows = params.rows;

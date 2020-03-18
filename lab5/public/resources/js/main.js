@@ -75,3 +75,55 @@ function divCountArray() {
         out.innerHTML = "Не удалось получить ответ с сервера.";
     });
 }
+
+function loadScript(src, callback) {
+    let script = document.createElement('script');
+    script.src = src;
+
+    script.onload = () => callback(null, script);
+    script.onerror = () => callback(new Error(`Ошибка загрузки скрипта ${src}`));
+
+    document.head.append(script);
+}
+
+let loadScriptPromise = function(src) {
+    return new Promise((resolve, reject) => {
+        loadScript(src, (err, script) => {
+            if (err) reject(err);
+            else resolve(script);
+        });
+    })
+};
+
+
+/**
+ * Adding zeros in start to numbers
+ *
+ * @author Evgeniy Trofimov
+ * @version 1.0
+ */
+function setZeroFirstFormat(value)
+{
+    if (value < 10)
+    {
+        value='0' + value;
+    }
+    return value;
+}
+
+/**
+ * Function convert date to string.
+ *
+ * @author Evgeniy Trofimov
+ * @version 1.0
+ * @return {string}
+ */
+function dateFormat(currentDateTime) {
+    let day = setZeroFirstFormat(currentDateTime.getDate());
+    let month = setZeroFirstFormat(currentDateTime.getMonth()+1);
+    let year = currentDateTime.getFullYear();
+    let hours = setZeroFirstFormat(currentDateTime.getHours());
+    let minutes = setZeroFirstFormat(currentDateTime.getMinutes());
+
+    return day + "." + month + "." + year;
+}

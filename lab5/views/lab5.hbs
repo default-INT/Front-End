@@ -1,5 +1,5 @@
 <section class="main-content">
-    <h1 id="title">Лабораторная работа №5</h1>
+    <h1 id="title"><span id="lab5"></span> Лабораторная работа №5</h1>
     <div class="description">
         <b style="font-size: 20pt; text-align: center; display: block">Задание</b><br>
         <br>
@@ -16,7 +16,7 @@
             Выстроить цепь обработки подготовленного файла, включающую следующие шаги:
             <ul>
                 <li>Чтение данных</li>
-                <li>Преобразование содержимого файла в объек</li>
+                <li>Преобразование содержимого файла в объект</li>
                 <li>Формирование списка оставшихся лабораторных работ на текущую дату</li>
                 <li>Вывод полученного списка</li>
             </ul>
@@ -24,44 +24,32 @@
         <div class="result">
             <hr>
             <div class="exe" id="exe1">
-                <div class="title">Задание 1</div>
+                <div class="title" style="font-size: 26pt"><b>Информация о студенте</b></div>
                 <br>
-                <label><b>Добавление сотрудника</b></label><br>
-                <input type="text" placeholder="Введите имя" name="name" style="width: auto">
-                <input type="text" placeholder="Введите фамилию" name="fullName" style="width: auto"><br>
-                <input type="number" placeholder="Введите ставку за день работы" name="dailyWorkRate"
-                       style="width: 520px"><br>
-                <input type="number" placeholder="Введите количество отработанных дней" name="numberOfDaysWorked"
-                       style="width: 520px"><br>
-                <select style="width: auto">
-                    <option value="painter">Маляр</option>
-                    <option value="plasterer">Штукатур</option>
-                </select><br>
+                <div class="student-info">
+                    <label><b>ФИО: </b></label><label id="fullName">undefined</label><br>
+                    <label><b>Факультет: </b></label><label id="faculty">undefined</label><br>
+                    <label><b>Специальность: </b></label><label id="specialty">undefined</label><br>
+                </div>
                 <br>
-                <button onclick="addEmployee()">Добавить сотрудника</button>
-                <button onclick="setEmployees()">Загрузить сотрудников</button>
-                <table class="employees-table">
+                <select id="disciplines" style="width: 180px; margin-bottom: 50px;" onchange="selectDiscipline()">
+                    <option>java-core</option>
+                    <option>front-end</option>
+                </select>
+
+                <table class="student-table">
                     <thead>
-                    <tr>
-                        <td>Имя</td>
-                        <td>Фамилия</td>
-                        <td>Ставка за день</td>
-                        <td>Количество отработанных дней</td>
-                        <td>Должность</td>
-                        <td>Зарплата</td>
-                    </tr>
+                        <tr>
+                            <td>Тема лабараторной работы</td>
+                            <td>Дата сдачи</td>
+                            <td>Оценка</td>
+                        </tr>
                     </thead>
                     <tbody>
                     </tbody>
                 </table>
+                <input type="date" id="labDate" onchange="getLabOnDate()" style="margin-bottom: 20px; width: 200px">
                 <div class="out"></div>
-            </div>
-            <hr>
-            <div class="exe" id="exe2" style="margin-bottom: 20px">
-                <div class="title">Задание 2</div>
-                <input type="text" name="phoneNumber" placeholder="Номер телефона" onchange="checkPhoneNumber()">
-                <input type="text" name="email" placeholder="email" onchange="checkEmail()">
-                <input type="text" name="url" placeholder="url адрес" onchange="checkUrl()">
             </div>
         </div>
     </div>
