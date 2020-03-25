@@ -1,0 +1,61 @@
+<section class="main-content">
+    <h1 id="title">Лабораторная работа №4</h1>
+    <div class="description">
+        <b style="font-size: 20pt; text-align: center; display: block">Задание</b><br>
+        <br>
+        <div class="quest">
+            <b>Задание 1.</b> Реализуйте класс Работник, который будет иметь следующие свойства: имя,
+            фамилия, ставка за день работы, количество отработанных дней. Также класс должен иметь метод
+            getSalary(), который будет выводить зарплату работника. Создайте класс наследник для работников
+            с определённой специализацией (маляр, штукатур), в котором добавьте поле “тип выполняемых работ”.
+            Реализуйте возможность формирования бригады с работниками различной специализации.<br><br>
+            <b>Задание 2.</b> Реализуйте родительский класс Validator с произвольными полями и методами
+            доступа к ним. Создайте классы-наследники для валидации телефонных номеров, email-адресов и
+            доменов сайтов. Сформируйте тестовый набор данных для проверки с помощью реализованных
+            классов-валидаторов. Для проверки значений допускается использование регулярных выражений.<br>
+        </div>
+        <div class="result">
+            <hr>
+            <div class="exe" id="exe1">
+                <div class="title">Задание 1</div>
+                <br>
+                <label><b>Добавление сотрудника</b></label><br>
+                <input type="text" placeholder="Введите имя" name="name" style="width: auto">
+                <input type="text" placeholder="Введите фамилию" name="fullName" style="width: auto"><br>
+                <input type="number" placeholder="Введите ставку за день работы" name="dailyWorkRate"
+                       style="width: 520px"><br>
+                <input type="number" placeholder="Введите количество отработанных дней" name="numberOfDaysWorked"
+                       style="width: 520px"><br>
+                <select style="width: auto">
+                    <option value="painter">Маляр</option>
+                    <option value="plasterer">Штукатур</option>
+                </select><br>
+                <br>
+                <button onclick="addEmployee()">Добавить сотрудника</button>
+                <button onclick="setEmployees()">Загрузить сотрудников</button>
+                <table class="employees-table">
+                    <thead>
+                    <tr>
+                        <td>Имя</td>
+                        <td>Фамилия</td>
+                        <td>Ставка за день</td>
+                        <td>Количество отработанных дней</td>
+                        <td>Должность</td>
+                        <td>Зарплата</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="out"></div>
+            </div>
+            <hr>
+            <div class="exe" id="exe2" style="margin-bottom: 20px">
+                <div class="title">Задание 2</div>
+                <input type="text" name="phoneNumber" placeholder="Номер телефона" onchange="checkPhoneNumber()">
+                <input type="text" name="email" placeholder="email" onchange="checkEmail()">
+                <input type="text" name="url" placeholder="url адрес" onchange="checkUrl()">
+            </div>
+        </div>
+    </div>
+</section>

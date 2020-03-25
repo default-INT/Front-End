@@ -1,0 +1,52 @@
+<section class="main-content">
+    <h1 id="title">Лабораторная работа №6</h1>
+    <div class="description">
+        <b style="font-size: 20pt; text-align: center; display: block">Задание</b><br>
+        <br>
+        <div class="quest">
+            <b>Задание 1.</b> Реализуйте класс Работник, который будет иметь следующие свойства: имя,
+            фамилия, ставка за день работы, количество отработанных дней. Также класс должен иметь метод
+            getSalary(), который будет выводить зарплату работника. Создайте класс наследник для работников
+            с определённой специализацией (маляр, штукатур), в котором добавьте поле “тип выполняемых работ”.
+            Реализуйте возможность формирования бригады с работниками различной специализации.<br><br>
+        </div>
+        <div class="result">
+            <hr>
+            <div class="exe" id="exe1">
+                <div class="title">Задание</div>
+                <br>
+                <label><b>Добавление сотрудника</b></label><br>
+                <input type="text" placeholder="Введите имя" name="name" style="width: auto">
+                <input type="text" placeholder="Введите фамилию" name="fullName" style="width: auto"><br>
+                <input type="number" placeholder="Введите ставку за день работы" name="dailyWorkRate"
+                       style="width: 520px"><br>
+                <input type="number" placeholder="Введите количество отработанных дней" name="numberOfDaysWorked"
+                       style="width: 520px"><br>
+                <select style="width: auto">
+                    <option value="painter">Маляр</option>
+                    <option value="plasterer">Штукатур</option>
+                </select><br>
+                <br>
+                <button id="addBtn" onclick="addEmployee()">Добавить сотрудника</button>
+                <button onclick="setEmployees()">Загрузить сотрудников</button>
+                <button id="editBtn" style="display: none">Изменить данные сотрудника</button>
+                <button id="changeBtn" style="display: none" onclick="changeClick()">Отмена</button>
+                <table class="employees-table">
+                    <thead>
+                    <tr>
+                        <td>Имя</td>
+                        <td>Фамилия</td>
+                        <td>Ставка за день</td>
+                        <td>Количество отработанных дней</td>
+                        <td>Должность</td>
+                        <td>Зарплата</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="out"></div>
+            </div>
+        </div>
+    </div>
+</section>

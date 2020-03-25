@@ -1,0 +1,56 @@
+<section class="main-content">
+    <h1 id="title"><span id="lab5"></span> Лабораторная работа №5</h1>
+    <div class="description">
+        <b style="font-size: 20pt; text-align: center; display: block">Задание</b><br>
+        <br>
+        <div class="quest">
+            Подготовить json-файл, содержащий следующую информацию:<br>
+            <ul>
+                <li>ФИО студента</li>
+                <li>Факультет</li>
+                <li>Специальность</li>
+                <li>Список дисциплин, по которым есть лабораторные работы (каждая дисциплина –
+                    это объект, содержащий список лабораторных работ</li>
+            </ul>
+            <br>
+            Выстроить цепь обработки подготовленного файла, включающую следующие шаги:
+            <ul>
+                <li>Чтение данных</li>
+                <li>Преобразование содержимого файла в объект</li>
+                <li>Формирование списка оставшихся лабораторных работ на текущую дату</li>
+                <li>Вывод полученного списка</li>
+            </ul>
+        </div>
+        <div class="result">
+            <hr>
+            <div class="exe" id="exe1">
+                <div class="title" style="font-size: 26pt"><b>Информация о студенте</b></div>
+                <br>
+                <div class="student-info">
+                    <label><b>ФИО: </b></label><label id="fullName">undefined</label><br>
+                    <label><b>Факультет: </b></label><label id="faculty">undefined</label><br>
+                    <label><b>Специальность: </b></label><label id="specialty">undefined</label><br>
+                </div>
+                <br>
+                <select id="disciplines" style="width: 180px; margin-bottom: 50px;" onchange="selectDiscipline()">
+                    <option>java-core</option>
+                    <option>front-end</option>
+                </select>
+
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <td>Тема лабараторной работы</td>
+                            <td>Дата сдачи</td>
+                            <td>Оценка</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <input type="date" id="labDate" onchange="getLabOnDate()" style="margin-bottom: 20px; width: 200px">
+                <div class="out"></div>
+            </div>
+        </div>
+    </div>
+</section>
